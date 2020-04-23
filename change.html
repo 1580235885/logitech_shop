@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/coupon.css">
+    <title>更换手机号</title>
+    <script>
+        function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize=(html.clientWidth/320*100)+"px"
+        }
+        getWidth()
+        window.onresize=function () {
+            getWidth()
+        }
+    </script>
+</head>
+<body>
+    <div class="context">
+        <div class="w_top">
+           <a href="mine.html">
+               <span class="mui-icon mui-icon-back"></span>
+            </a>
+           <h2>更换手机号</h2>
+        </div>
+    </div>
+    <div class="w_change-cont">
+        <div class="w_input-list">
+            <div class="mui-input-row w_address-sp2 w_input-list1">
+                <input type="search" class="mui-input-clear w_input-inp" placeholder="请输入手机号" maxlength="11">
+            </div>
+            <div class="w_input-list2">
+                <div class="mui-input-row w_address-sp2">
+                    <input type="search" class="mui-input-clear  w_input-inpt" placeholder="短信验证码" maxlength="11">
+                </div>
+                <button class="w_input-but">获取验证码</button>
+            </div>
+        </div>
+        <div class="w_button-change">
+            <button>立即更换</button>
+        </div>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/change.js"></script>
+</body>
+</html>
