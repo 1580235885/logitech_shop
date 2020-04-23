@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/mui.picker.css">
+    <link href="css/mui.poppicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/coupon.css">
+    <title>修改收货地址</title>
+    <script>
+        function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize=(html.clientWidth/320*100)+"px"
+        }
+        getWidth()
+        window.onresize=function () {
+            getWidth()
+        }
+    </script>
+</head>
+<body>
+    <div class="context">
+        <div class="w_top">
+           <a href="address.html">
+               <span class="mui-icon mui-icon-back"></span>
+            </a>
+           <h2>修改收货地址</h2>
+        </div>
+    </div>
+    <div class="w_address-cont">
+      <form action="" method="POST">
+        <div class="w_address-list">
+            <span class="w_address-sp1">收件人</span>
+            <div class="mui-input-row w_address-sp2">
+                <input type="search" class="mui-input-clear w_address-value1" placeholder="收件人姓名" name="name">
+            </div>
+        </div>
+        <div class="w_address-list">
+            <span class="w_address-sp1">手机号</span>
+            <div class="mui-input-row w_address-sp2">
+                <input type="search" class="mui-input-clear w_address-value1" placeholder="收件人手机"name="phone" maxlength="11">
+            </div>
+        </div>
+        <div class="mui-content">
+            <div class="w_address-list mui-btn mui-btn-block" id='showCityPicker3' type='button'>
+                <span class="w_address-sp1">收货地址</span>
+                <span class="w_address-sp2" style="width: 60%;">
+                    <input id='cityResult3' class="ui-alert w_value2" placeholder="选择省市区" name="site1">
+                </span>
+                <span class="mui-icon mui-icon-forward w_address-sp3 displynone w_address-rig"></span>
+            </div>
+        </div>
+        <div class="w_address-list">
+            <span class="w_address-sp1">详细地址</span>
+            <div class="mui-input-row w_address-sp2">
+                <input type="search" class="mui-input-clear w_address-value1" placeholder="详细地址" name="site2">
+            </div>
+        </div>
+        <div class="w_address-butt">
+            <input type="submit" value="保存">
+        </div>
+        <div class="w_address-clear">
+            <input type="submit" value="删除">
+        </div>
+    </form>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.js"></script>
+    <script src="js/mui.poppicker.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/address-amend.js"></script>
+</body>
+</html>

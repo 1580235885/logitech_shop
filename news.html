@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/news.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img class="icon" src="images/next.png" alt="">
+         </a>
+        <h1 class="top">新闻详情</h1>
+    </div>
+    <div class="news-content" id="list-content">
+    </div>
+    <!-- 底部 -->
+    <div class="tool-box">
+        <div class="news-list">
+            <p class="new-header">
+            下一篇
+            </p>
+            <div class="default-list">
+                <div class="item">
+                    <a href="">
+                        <div class="item-inner">
+                        <div class="item-medio">
+                            <img class="responimg" src="https://images.wincheers.net/UpLoad/Web/ProductImg/2019-05-22/20190522143436_3779.jpg" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h4 class="title">25项国际设计大奖，罗技全囊获！</h4>
+                            <p class="bottom">
+                                退后，小罗要亮大招了。
+                            </p>
+                        </div>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+         function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize = (html.clientWidth / 320 * 100) + "px"
+        }
+        getWidth()
+        window.onresize = function () {
+            getWidth()
+        }
+        function sendTxt(sendTxt) {
+        setTimeout(function() {
+       
+        var list=document.getElementById("list-content")
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var articles = JSON.parse(xhr.responseText);
+                // console.log(articles);
+                // console.log(articles[0].img);
+                for (var i=0; i<1; i++) {
+                    list.innerHTML+=`
+                     <div class="news-content" id="list-content">
+        <div class="news-head">
+            <h3 class="title">罗技G502 LIGHTSPEED创世者无线游戏鼠标入选《时代》杂志2019年度100大最佳创新产品</h3>
+            <p class="time">2019-11-22 18:18</p>
+        </div>
+        <div class="news-main">
+            <div class="content">
+                <p class="content-top">
+                        <br>
+                            近日，罗技G502 LIGHTSPEED创世者无线游戏鼠标被《时代》杂志（TIME）评为 “
+                            <strong class="strong">2019年度100大最佳创新产品</strong>
+                            ”（100 Best Inventions of 2019）。
+                </p>
+
+        <p class="leisure">
+        
+        </p>
+         <img src="https://images.wincheers.net/ggw/te1.jpg" alt="">
+         <p class="leisure"></p>
+         <p class="word">
+                罗技全球副总裁兼游戏品类总经理Ujesh Desai 表示，“罗技G502是罗技G历史上最出色的鼠标。
+                感谢罗技G的技术团队赋予它罗技G高水准电竞科技，让这款承载了数百万罗技G粉丝的产品彰显出罗技G最尖端的无线技术，这也是我们对粉丝需求的诚意反馈。
+         </p>
+         <p class="leisure2"></p>
+         <p>
+             <img src="https://images.wincheers.net/ggw/te2.jpg" alt="">
+         </p>
+         <p class="leisure3"></p>
+        <p class="middle">
+                此次评选维度涵盖了 <strong>创意,</strong> <strong>创造力,</strong> <strong>影响力,</strong> <strong>野心,</strong> 和<strong>有效性</strong>;最终从众多产品中评选出100项具有开创性，
+                且正在改变我们的生活，工作，娱乐和思考可能性的的发明。
+
+        </p>
+        <p class="leisure4"></p>
+        <p class="big">
+                罗技G502 LIGHTSPEED创世者无线游戏鼠标自问世以来，以卓越的性能带给玩家惊喜的电竞体验，成为驰骋电竞沙场数载的畅销奇迹
+        </p>
+        <p class="leisure5"></p>
+        <p>
+            <img src="https://images.wincheers.net/ggw/te3.jpg" alt="">
+        </p>
+        <p class="leisure6"></p>
+        <p class="sure">
+                罗技G502 LIGHTSPEED创世者无线游戏鼠标不仅代表着电竞领域产品的最高标杆，实现玩家对游戏鼠标的期待，同时也体现出罗技G在
+                <strong>产品研发.</strong> <strong> 技术革新</strong>上的巨大投入。
+        </p>
+         <p class="leisure7"></p>
+         <p class="sure2">
+                罗技从一家技术公司转型外设公司发展，变成了集科技硬件、产品设计及创造力的科技创新公司，打造专注电竞领域的罗技G产品线。
+                从 <strong> LIGHTSPEED™无线传输技术高性能HERO 16K传感器</strong> ，到<br> <strong>POWERPLAY无线充电系统</strong> ，罗技G将顶尖科技布局无线系列产品线，引领电竞外设行业无线标准，颠覆玩家固有游戏体验，
+                打造该领域的标杆型产品真正成为游戏及电竞玩家赋能者。
+         </p>
+          <p class="leisure8"></p>
+          <p>
+              <img src="https://images.wincheers.net/ggw/te4.jpg" alt="">
+          </p>
+          <p class="leisure9"></p>
+          <p class="article">
+                此次《时代》杂志奖项，是对罗技G创新能力的高度肯定，也是罗技G在游戏领域的重要里程碑。
+                未来，罗技G将更加关注用户体验，将创新与前沿科技不断引入产品。
+          </p>
+        </div>
+    </div>
+    </div>         
+                    `
+                }
+
+            }
+        }
+        xhr.open('GET', 'enterprise.php?sendTxt=' + sendTxt, true);
+            xhr.send();
+        },200)  
+    }
+        sendTxt('鼠标')
+    </script>
+</body>
+</html>

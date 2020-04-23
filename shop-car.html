@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/mui.min.js"></script>
+    <script src="js/yindex.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="y-top">
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+                <h1>购物车</h1>
+               <span class="edit">编辑</span>
+            </header>
+        </div>
+        <div class="y-shoppings">
+            <ul class="shop">
+            </ul>
+        </div>
+        <div class="settel-accounts">
+            <div class="close-money">
+                <div class="left">
+                    <div class="checkbox">
+                        <i class="check-input checkk"></i>
+                    </div>
+                    <span class="jie">全选</span>
+                    <div class="right-text">
+                        <p>合计：<span class="num-price">0</span></p>
+                        <p>积分：<span class="num-score">&nbsp 0</span></p>
+                    </div>
+                    <a href='javascript:void(0)'  class="jump">
+                        <span class="money change-num mui-btn mui-btn-numbox-minus">结算</span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="x-nav-footer">
+			<div class="x-foot-list x-active">
+				<a href="index.html">
+					<i class="mui-icon iconfont icon-shouye"></i>
+					<p>首页</p>
+				</a>
+			</div>
+			<div class="x-foot-list">
+				<a href="javascript:void(0)">
+					<i class="mui-icon iconfont icon-fenlei"></i>
+					<p>客服</p>
+				</a>
+			</div>
+			<div class="x-foot-list">
+				<a href="shop-car.html">
+					<i class="mui-icon iconfont icon-gouwuche"></i>
+					<p>购物车</p>
+				</a>
+			</div>
+			<div class="x-foot-list add-shop">
+				<a href="javascript:void(0)" >
+					<i></i>
+					<p style="color: #fff; ">加入购物车</p>
+				</a>
+			</div>
+		</div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        // 返回时可以后退到前一页面
+        mui('.mui-bar-nav').on('tap','.mui-icon-left-nav',function() {
+            window.history.go(-1)
+        })
+        //  当屏幕尺寸发生变化时，可以获取屏幕的宽度，
+	 function getWidth() {
+            var html = document.getElementsByTagName("html")[0];
+            html.style.fontSize = (html.clientWidth / 320) * 100 + "px";
+        }
+        getWidth();
+        window.onresize = function () {
+            getWidth();
+        };
+        // 解决mui中a连接不能跳转的问题
+        mui('body').on('tap','a',function(){
+　　　　　　window.top.location.href=this.href;
+　　　　});
+        // 获取后台数据
+         
+        $.getJSON("shop.php",function(data){
+            let page = data[0].id
+        // $(".close-money")[0].innerHTML+=`
+        //         <a href='order.html?id=${page}' style="display:inline-block" class="jump">
+        //             <span class="money change-num mui-btn mui-btn-numbox-minus">结算</span>
+        //         </a>
+		// 	`
+            for(let i=0;i<data.length;i++){
+                $(".shop")[0].innerHTML+=`
+                    <li class="shoppings-details">
+                        <div class="checkbox " >
+                            <i class="check-input check-select" ></i>
+                        </div>
+                        <div class="shop-d">
+                            <span class="img-container">
+                                <div class="img-box">
+                                    <img class="mui-media-object mui-pull-left" src="${data[i].img}">
+                                </div>
+                                <div class="mui-media-body img-right">
+                                    <div class="tit">${data[i].title}</div>
+                                    <p class='price'>
+                                        <span class="price-number">${data[i].newprice}</span> 
+                                        <span class="num-count">
+                                            <button class="subtract mui-numbox" data-numbox-min="1">-</button><button class="change-num mui-btn mui-btn-numbox-minus confirmBtn"  id='' class="mui-btn mui-btn-blue mui-btn-outlined">1</button><button class="add mui-btn mui-btn-numbox-plus">+</button>
+                                            <div id="info"></div>
+                                        </span>
+                                    </p>
+                                </div>
+                            </span>
+                            <div class="bot">
+                                <p   style="line-height: .22rem;">
+                                    <img src="${data[i].img}" alt="">
+                                    <span class="donation">赠品</span> <span class="donation-tit">${data[i].title}</span>
+                                    <span class="count1 mui-icon mui-icon-closeempty">1</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                `
+            }
+        mui.init()
+        // 选中后加上选中的图标
+        mui('.checkbox').on('tap', '.check-input', addchecked)
+        // 加上选中图标函数
+        function addchecked(e){
+            if($(this).is(".checked")) {
+                $(this).removeClass("checked")
+            }else{
+                $(this).addClass("checked")
+            }
+        }
+        // 点击价格后面中间的按钮弹出弹框
+        $(".confirmBtn").on('tap', function() {
+				var btnArray = ['取消', '确定'];
+				mui.confirm(`<button class="subtract">-</button><button class="change-num confirmBtn"  id='' class="mui-btn mui-btn-blue mui-btn-outlined">0</button><button class="add">+</button>`, '修改商品数量', btnArray, function(e) {
+					if (e.index == 1) {
+						info.innerText = '你刚确认MUI是个好框架';
+					} else {
+						info.innerText = 'MUI没有得到你的认可，继续加油'
+					}
+				})
+			});
+        // 点击减的按钮
+        mui(".num-count").on('tap',".num-count .subtract",function(){
+            calculate()
+            var count =$(".confirmBtn")[0].innerText
+            localStorage.setItem("count",count)
+            if(mui('.change-num')[$(".subtract").index($(this))].innerText<2){
+                mui('.change-num')[$(".subtract").index($(this))].innerText=1
+            }else  {
+                mui('.change-num')[$(".subtract").index($(this))].innerHTML--
+                $(".count1")[$(".subtract").index($(this))].innerHTML=$(".confirmBtn")[$(".subtract").index($(this))].innerText
+                if($('check-select').hasClass('checked')){
+                    calculate()
+                }
+            }
+        },false)
+        // 点击加的按钮
+        mui(".num-count").on('tap',".add",function(){
+            var count =$(".confirmBtn")[0].innerText
+            localStorage.setItem("count",count)
+            console.log(count)
+                $('.change-num')[$(".add").index($(this))].innerHTML++
+                $(".count1")[$(".add").index($(this))].innerHTML=$(".confirmBtn")[$(".add").index($(this))].innerText
+                if($('.check-select').hasClass('checked')){
+                    calculate()
+                }
+                calculate()
+        },false)
+
+        // 点击右上方的编辑按钮
+        document.getElementsByClassName("edit")[0].addEventListener('tap',function(e){
+            if(e.target.innerText=='编辑'){
+                e.target.innerText='完成'
+                $(".money")[0].innerText='删除'
+                // $(".right-text")[0].addClass("hidden")
+                // console.log($(".checked").length,456465456)
+                // if($(".money")[0].innerText=='删除' && $(".checked").length>0){
+                //     del()
+                // }
+            }else {
+                e.target.innerText='编辑'
+                $(".money")[0].innerText='结算'
+                // $('.right-text')[0].removeClass("hidden")
+            }
+        })
+        // 点击删除后删除对应商品
+        function del() {
+            var btnArray = ['取消', '确定'];
+                mui.confirm(``, '你确定要删除该商品吗', btnArray, function(e) {
+                    console.log(e,456798)
+                    if (e.index == 1  ) {
+                        $('.checked').parent().parent().remove()
+                        $(".num-price")[0].innerText=0
+                    } else {
+                        info.innerText = 'MUI没有得到你的认可，继续加油'
+                    }
+                })
+        }
+        mui(".close-money").on("tap",".money",function(e){
+            if($(".money")[0].innerText=='删除' && $(".checked").length>0){
+                del()
+                console.log("111")
+            }else if($(".money")[0].innerText=='结算' && $(".checked").length>0){
+                console.log(e.target.innerText)
+                $(".jump")[0].href="order.html?id="+page
+            }else {
+               $(".jump")[0].href=''
+            }
+        })
+        // 点击结算
+        // 选中商品前的按钮 后 会相应的计算价格
+        mui(".checkbox").on("tap",'.check-input',function(){
+            var selector = $(".check-input").index($(this))
+            var len = $(".check-input").length
+            if($(".checked").length>0){
+                 $(".money").eq(0).css({backgroundColor:"#fd2645",color:"#fff"})
+            }else {
+                $(".money").eq(0).css({backgroundColor:"",color:"#333"})
+                $(".num-price")[0].innerText='￥0'
+            }
+            calculate()
+        })
+        // 计算价格的函数
+        var pp =0
+        function calculate(){
+            pp=0
+            for(let i =0;i<$(".checked").length;i++){
+                    let priceNumber = $(".price-number")[i].innerText.substring(1)
+                    let priceCount =mui('.change-num')[i].innerText
+                    pp += "+"+priceNumber+ "*" +priceCount
+                }
+                $(".num-price")[0].innerText= eval( pp)
+        }
+         // 点击全选
+            mui(".left").on('tap',".checkbox .check-input",function(){
+                // console.log($(".check-input").hasClass("checked"),445545)
+                if($(".checkk").hasClass("checked")){
+                     $(".check-input").addClass("checked")
+                }else{
+                    $(".check-input").removeClass("checked")
+                }
+                
+            })
+        })
+        
+    </script>
+</body>
+</html>

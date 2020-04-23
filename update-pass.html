@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/coupon.css">
+    <title>更改密码https://store.logitech.com.cn/Wap</title>
+    <script>
+            function getWidth() {
+                var html = document.getElementsByTagName("html")[0]
+                html.style.fontSize=(html.clientWidth/320*100)+"px"
+            }
+            getWidth()
+            window.onresize=function () {
+               getWidth()
+            }
+    </script>
+</head>
+<body>
+    <div class="context">
+        <div class="w_top">
+           <a href="address.html">
+               <span class="mui-icon mui-icon-back"></span>
+            </a>
+           <h2>更改密码</h2>
+        </div>
+    </div>
+    <form action="pass.php" method="POST" class="stopfrom"> 
+        <div class="w_pass-input">
+            <div class="mui-input-row">
+            <input type="password" class="mui-input-clear w_pass1" name="pass" placeholder="原密码">
+            </div> 
+            <div class="mui-input-row">
+                <input type="password" class="mui-input-clear w_pass2" name="pass1" placeholder="新密码">
+            </div> 
+            <div class="mui-input-row">
+                <input type="password" class="mui-input-clear w_pass3" placeholder="确认新密码">
+            </div> 
+        </div>
+        <div class="w_user-button">
+            <input type="submit" value="确定" >
+        </div>
+    </form>
+    <script src="js/mui.min.js"></script>
+    <script src="js/update-pass.js"></script>
+</body>
+</html>

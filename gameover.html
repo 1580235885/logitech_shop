@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/gameover.css">
+    <link rel="stylesheet" href="css/swiper.minli.css">
+    <link rel="stylesheet" href="css/mui.minli.css">
+    <title>Document</title>
+</head>
+<style>
+    .mui-card .mui-control-content {
+        padding: 10px;
+    }
+    .mui-control-content {
+        display: block !important;
+    }
+</style>
+<body>
+    <div class="header">
+        <a href="index.html">
+        <img class="icon" src="images/next.png" alt="">
+        </a>
+        <h1 class="top">游戏套餐</h1>
+    </div>
+    <div class="icon_1">
+        <img class="icon_2" src="https://wincheers.oss-cn-shanghai.aliyuncs.com/UpLoad/%E6%B8%B8%E6%88%8F.jpg" alt="">
+    </div>
+    <div class="middle">
+        <h3 class="recomend">推荐套餐</h3>
+    </div>
+    <!-- 轮播图 -->
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="content">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- table切换 -->
+    <div class="combo">
+        <h3 class="head border-px">自选套餐</h3>
+        <div class="product-tab">
+            <div class="mui-content">
+                <div class="tab-nav">
+                    <div style="padding: 10px 10px;">
+                        <div id="segmentedControl" class="mui-segmented-control">
+                            <a class="mui-control-item mui-active" href="#item1">
+                                <div class="item active">
+                                    <p class="text" onclick="sendTxt('鼠标垫')">选鼠标垫</p>
+                                </div>
+                            </a>
+                            <a class="mui-control-item" href="#item2">
+                                <div class="item">
+                                    <p class="text" onclick="sendTxt('鼠标')">选鼠标</p>
+                                </div>
+                            </a>
+                            <a class="mui-control-item" href="#item3">
+                                <div class="item">
+                                    <p class="text" onclick="sendTxt('键盘')">选键盘</p>
+                                </div>
+                            </a>
+                            <a class="mui-control-item" href="#item4">
+                                <div class="item">
+                                    <p class="text" onclick="sendTxt('耳机')">选耳机</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 下面内容 -->
+                <div id="item1" class="mui-control-content mui-active">
+                    <div id="scroll" class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <ul class="mui-table-view list-content">
+                                <!-- 分割线 -->
+                                <!-- <li class="mui-table-view-cell">
+                                    <div class="tab-content">
+                                        <div class="tab-content1">
+                                            <div class="product">
+                                                <div class="product-content">
+                                                    <div class="product-img">
+                                                        <a href="">
+                                                            <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                                alt="" class="responimg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                        <div class="content">
+                                                            <p class="price-1">
+                                                                <i class="yuan">￥999.00</i>
+                                                            </p>
+                                                            <div class="count">
+                                                                <i class="iconfont"><img src="./image/icon1.png"
+                                                                        alt=""></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mui-table-view-cell">
+                                    <div class="tab-content">
+                                        <div class="tab-content1">
+                                            <div class="product">
+                                                <div class="product-content">
+                                                    <div class="product-img">
+                                                        <a href="">
+                                                            <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                                alt="" class="responimg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                        <div class="content">
+                                                            <p class="price-1">
+                                                                <i class="yuan">￥999.00</i>
+
+                                                            </p>
+                                                            <div class="count">
+                                                                <i class="iconfont"><img src="./image/icon1.png"
+                                                                        alt=""></i>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <div class="tab-content">
+                                        <div class="tab-content1">
+                                            <div class="product">
+                                                <div class="product-content">
+                                                    <div class="product-img">
+                                                        <a href="">
+                                                            <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                                alt="" class="responimg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                        <div class="content">
+                                                            <p class="price-1">
+                                                                ￥<i class="yuan">999.00</i>
+                                                            </p>
+                                                            <div class="count">
+                                                                <i class="iconfont"><img src="./image/icon1.png"
+                                                                        alt=""></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item2" class="mui-control-content">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content2">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content2">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content2">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥ 999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content2">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="item3" class="mui-control-content">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content3">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content3">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content3">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content3">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥ 999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="tab-content4">
+                            <div class="tab-content1">
+                                <div class="product">
+                                    <div class="product-content">
+                                        <div class="product-img">
+                                            <a href="">
+                                                <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                    alt="" class="responimg">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                            <div class="content">
+                                                <p class="price-1">
+                                                    <i class="yuan">￥ 999.00</i>
+                                                </p>
+                                                <div class="count">
+                                                    <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div id="item4" class="mui-control-content">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content4">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥ 999.00</i>
+
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content4">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div class="tab-content4">
+                                <div class="tab-content1">
+                                    <div class="product">
+                                        <div class="product-content">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XL/powerplay-1.png"
+                                                        alt="" class="responimg">
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="" class="name">罗技 GPowerPlay无线充电鼠标垫</a>
+                                                <div class="content">
+                                                    <p class="price-1">
+                                                        <i class="yuan">￥999.00</i>
+                                                    </p>
+                                                    <div class="count">
+                                                        <i class="iconfont"><img src="./image/icon1.png" alt=""></i>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                                 -->
+                                <!-- 分割线 -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="combo-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="price">
+                    共：<span class="all-yuan">0</span>元
+                    <!-- <span class="all-num">0</span>件 -->
+                </p>
+            </div>
+            <div class="btn-1">去结算</div>
+        </div>
+        <div class="footer-count">
+            已选
+            <span class="counted">0</span>
+            件
+        </div>
+    </footer>
+   
+    <!-- </div> -->
+    <script src="js/swiper.minli.js"></script>
+    <script src="js/mui.minli.js"></script>
+    <script>
+        mui.init()
+        function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize = (html.clientWidth / 320 * 100) + "px"
+        }
+        getWidth()
+        window.onresize = function () {
+            getWidth()
+        }
+        // <!-- Swiper JS -->
+        //   <!-- Initialize Swiper -->
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            observer: true,
+            observeparents: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+        var text = document.getElementsByClassName('list-content')[0]
+        var list = document.getElementById("content")
+        function sendTxt(sendTxt) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var articles = JSON.parse(xhr.responseText);
+                    list.innerHTML = ''
+                    text.innerHTML = ''
+                    for (var i = 0; i <= 2; i++) {
+                        list.innerHTML += `
+              <div class="swiper-slide">
+                 <div class="slider-top1">
+                    <div class="slide-top">
+                        <div class="head">
+                            <p class="name">套餐一</p>
+                            <p class="price">
+                                ￥&nbsp;1399
+                            </p>
+                            <p class="price-origin">
+                                ￥2098
+                            </p>
+                            <p class="save">
+                                立省￥339
+                            </p>
+                        </div>
+                        <div class="btn">
+                            <p class="btn-red">立即购买</p>
+                        </div>
+                    </div>
+                    <div class="slide-main">
+                        <div class="item">
+                            <a href="">
+                                <div class="item-img">
+                                    <img src="${articles[i].img}" alt="" class="respon">
+                                </div>
+                                <div class="item-content">
+                                    <p class="name">${articles[i].title}</p>
+                                    
+                                    <p class="price">￥1099</p>
+                                  
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="">
+                                <div class="item-img">
+                                    <img src="${articles[i].img}" alt=""
+                                        class="respon">
+                                </div>
+                                <div class="item-content">
+                                    <p class="name">${articles[i].title}</p>
+                                 
+                                    <p class="price">￥999</p>                             
+                                </div>
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+                    `
+                    }
+
+                    for (var i = 0; i < articles.length; i++) {
+                        text.innerHTML += `
+                    <li class="mui-table-view-cell">
+                        <div class="tab-content">
+                            <div class="tab-content1">
+                                <div class="product">
+                                    <div class="product-content">
+                                        <div class="product-img">
+                                            <a href="javascript:void(0)">
+                                                <img src="${articles[i].img}"class="responimg">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="name">${articles[i].title}</a>
+                                            <div class="content">
+                                                <p class="price-1">
+                                                    <i class="yuan">${articles[i].oldprice}</i>
+                                                </p>
+                                                <div class="count">
+                                                    <div class="hello iconfont2 iconfont">
+                                                        <i class="iconfont2"></i>
+                                                        <i onclick="none" class="iconfont"><img src="" alt=""></i>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>    
+                    `
+                    }
+                }
+            }
+            xhr.open('GET', 'enterprise.php?sendTxt=' + sendTxt, true);
+            xhr.send();
+            setTimeout(function() {
+                // 购物加减
+                var ico = document.getElementsByClassName("count");
+                var aprice = document.getElementsByClassName('yuan')
+                var allNum = document.getElementsByClassName('counted')[0]
+                var allYuan = document.getElementsByClassName('all-yuan')[0]
+                // console.log(ico[2],ico.length)
+                for (let i = 0; i < ico.length; i++) {
+                    ico[i].addEventListener('tap', function () {
+                        // console.log(aprice[i].innerHTML)
+                        allNum.innerHTML++
+                        allYuan.innerHTML = eval(allYuan.innerHTML + "+" + aprice[i].innerHTML.substring(1))
+                    })
+                };
+                mui('.count').on('tap','.iconfont2',function(even){
+                    // console.log(this)
+                    if( this.className=="active iconfont2 iconfont"){
+                        this.className = "active iconfont2";
+                    }else{
+                        this.className = "active iconfont2 iconfont";
+                    }
+            })
+            },200)  
+        }
+        sendTxt('鼠标')
+       
+    </script>
+</body>
+</html>

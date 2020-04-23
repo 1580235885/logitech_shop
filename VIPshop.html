@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/NewArrival.css">
+    <link rel="stylesheet" href="css/VIPshop.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/mui.js"></script>
+    <script>
+        function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize=(html.clientWidth/320*100)+"px"
+        }
+        getWidth()
+        window.onresize=function () {
+           getWidth()
+        }
+    </script>
+    <title>罗技官方商城</title>
+</head>
+<body>
+    <div class="L-header">
+        <h2 class="L-header-title">
+            <span class="mui-icon mui-icon-arrowleft"></span>
+            积分优惠购
+        </h2>
+    </div>
+    <div class="VIP-main">
+        <a href="javascript:void(0)">
+            <img src="https://images.wincheers.net/UpLoad/Web/ProductImg/2018-05-18/NEW_XM/Point.jpg" alt="">
+        </a>
+        <div class="L-list-content">
+            <ul>
+            </ul>
+        </div>
+        <div class="L-list-exchange">
+            <h4>
+                <p>热门兑换</p>
+            </h4>
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <script>
+        mui.init()
+        mui('.L-header-title').on('tap','.mui-icon-arrowleft',function() {
+            window.history.go(-1)
+        })
+        mui('body').on('tap','a',function(){
+　　　　　　window.top.location.href=this.href;
+　　　　});
+        $.getJSON('VIPData.php',function(data) {
+            for(let i=0 ;i<2;i++) {
+                $('.L-list-content>ul').append(`
+                    <li>
+                        <a href="./shop-details.html?id=${data[i].id}">
+                            <img src="${data[i].img}" alt="">
+                            <div>
+                                <p class="p1">${data[i].title}</p>
+                                <p class="p2">会员价<span>${data[i].newprice}</span></p>
+                                <p class="p3"> <span>商城价：${data[i].oldprice}元</span><span>${data[i].exchange_num}</span></p>
+                            </div>
+                        </a>
+                    </li>
+                `)
+            }
+            for(let i=2;i<data.length;i++) {
+                $('.L-list-exchange>ul').append(`
+                    <li>
+                        <a href="./shop-details.html?id=${data[i].id}">
+                            <img src="${data[i].img}" alt="">
+                            <p class="p1">${data[i].title}</p>
+                            <p class="p2">￥${data[i].price_integral}</p>
+                            <p class="p3"><span>${data[i].oldprice}元</span><span>${data[i].exchange_num}</span></p>
+                        </a>
+                    </li>
+                `)
+            }
+        })
+    </script>
+</body>
+</html>

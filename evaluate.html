@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <script src="js/mui.min.js"></script>
+    <script src="js/yindex.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="y-top">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1>商品评价</h1>
+        </header>
+    </div>
+    <div class="content">
+        <ul>
+            <li>
+                <div class="item-top">
+                    <img src="https://wincheers.oss-cn-shanghai.aliyuncs.com/UpLoad/logitech/user-header-pic.png" alt="">
+                    <span>匿名</span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                </div>
+                <p class="evalate-time">2019-07-30 16:39</p>
+                <p class="evalate-content">优秀，延迟低，玩游戏和有线一样，但是G HUB是真的玩不转，也没有教程。</p>
+            </li>
+            <li>
+                <div class="item-top">
+                    <img src="https://wincheers.oss-cn-shanghai.aliyuncs.com/UpLoad/logitech/user-header-pic.png" alt="">
+                    <span>匿名</span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                    <span class="five-icon"></span>
+                </div>
+                <p class="evalate-time">2019-07-30 16:39</p>
+                <p class="evalate-content">优秀，延迟低，玩游戏和有线一样，但是G HUB是真的玩不转，也没有教程。</p>
+            </li>
+        </ul>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+         function getWidth() {
+            var html = document.getElementsByTagName("html")[0];
+            html.style.fontSize = (html.clientWidth / 320) * 100 + "px";
+        }
+        getWidth();
+        window.onresize = function () {
+            getWidth();
+        };
+    </script>
+</body>
+</html>

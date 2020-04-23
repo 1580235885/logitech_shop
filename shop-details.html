@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>详情页</title>
+	<link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/mui.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	
+</head>
+
+<body>
+	<div class="y-top">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 style="margin: 0;">商品详情</h1>
+		</header>
+	</div>
+	<div class="container">
+		<!-- 轮播 -->
+		<div class="lider">
+			<div id="slider" class="mui-slider silde-img">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:void(0)">
+							<img src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=231577342,200927545&fm=26&gp=0.jpg" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="mui-slider-indicator tab">
+				</div>
+			</div>
+		</div>
+		<p class="silde-price">
+			<span class="new1">￥429.00</span>
+			<del class="old1">￥549.00</del>
+		</p>
+		<div class="y-title">
+
+		</div>
+		<div class="y-details">
+			<ul style="width: 100%; display: flex; justify-content: space-between;">
+			</ul>
+		</div>
+		<div class="y-model">
+			<div class="top">
+				<span class="y-model-t">型号</span>
+				<div class="img-item">
+					<ul class="imgs-item">
+					</ul>
+				</div>
+				<a class="mui-icon mui-icon-arrowright right" id="showUserPicker"></a>
+
+				<div id="userResult" class="ui-alert"></div>
+			</div>
+			<div class="model">
+				<p class="model-name">数量
+					<span class="jian">-</span>
+					<span class="model-number">1</span>
+					<span class="add-jia">+</span>
+				</p>
+			</div>
+			<div class="product-ad">
+				<ul class="product-item">
+					<li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRDN0MxOTI1QkE3ODExRTk4OUUwRTg4MUMxMzFBMUVDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRDN0MxOTI2QkE3ODExRTk4OUUwRTg4MUMxMzFBMUVDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REM3QzE5MjNCQTc4MTFFOTg5RTBFODgxQzEzMUExRUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REM3QzE5MjRCQTc4MTFFOTg5RTBFODgxQzEzMUExRUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6YtmOIAAADNElEQVR42ryXS2hTQRSGE3t9lIroRtHaFq2Pgm5Mi4qPhaVYlboQN1UUV41vUehCgi5EdOH7hW1iceVrpYioC60iKlSwuqlFxJJGi10IVWgsiK3xP/KPHK6Te28S9MCXm5nc3H/OnDNn5obj8XgooE0HtaAeLAKV7E+BDnAXPAZ90WjU92FhH+FRoAG0gqkBBygD2SUDwQAyXg/OZlUyenCbol/BAXo7GYwHJfxeA2K8pwLcAclEIjErV49lxOf5/R3YCF6BvzzQ0wqhMC4RcB3MZncTaHNPv83j40p0Oz3vtIlaBpEBcu9c/lfskswUBuUpLJ4283s1Y5sJ5WgcQCtDIHYYbMsmPEd5Ws2pLcjofYTNFnhd5Y6xDOADKOUUtar/TwLjctQchGhaxV68bQH9sizx20/j8VqKSiLpbJsJBsCnHBmEWIl6jjyzm6ujQXvcR+EaJpKxseAQKLZ4tZQh6QKPXL99Bkf0OsZAInz2R1Du4KOMogOWuH4H+7NM5zpwE5yFQFuA6X9Njd96MtV1/OGYRwYXgcYsngfOdFxOsFkrwmvYeODxv/ksCo0FJrrRWO0wViFmtV9pLbL8FkP8Vrr6XoCTls0ixetCRxX/b3l6MYNoWw/OgBFX/xCvlbqAhPMUPg2muZgAb0cs9/7JIYfpXcadZigP4W6I9Ae816ztpHj8jI3y0L83E5IOEb7Pxqr/IGw07slUt7Mhu9JR11oeA+bxuCO2TFW2FaYPWd1piWUXQjDs2qv3sdnusLameHKQEvhSPWArOKfaW0jIp09sN7ig2nJymQh6ZLNw2LmDh7UbPDkYry+zjudjD13eXjNasr6NsMQ5yZNjqRKTtX3LpxQGGcReJlaPqV6OiolM84ICPLQavJW8OMVmndmxdAH5YtneChVdjstTNjdDtFcXEC8bDYZzPXcxps3c8cQOgiv6HsenyqSZ8Rv4tpAJILiYO1kFuzeBq+5c8HqTEG/fqPNxmktLsr9XlddiHpFke93Dg745j9fr6Q3q8Q+ej+V96SJPoTHiZW/BTnmP8nqF8YtxhpVNBjAFLGEVkz3cvJ68B8+5bp/IeSvIEvslwABfifRvfFbbIAAAAABJRU5ErkJggg=="
+							alt="">正品保证</li>
+					<li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkUxOEJGMkRFQkE3ODExRTk4OERGQUVDMUY1MjJEMjExIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkUxOEJGMkRGQkE3ODExRTk4OERGQUVDMUY1MjJEMjExIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTE4QkYyRENCQTc4MTFFOTg4REZBRUMxRjUyMkQyMTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTE4QkYyRERCQTc4MTFFOTg4REZBRUMxRjUyMkQyMTEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4E9eiJAAADBElEQVR42pyXXWwNQRTHd8cloiQiirb0qtLWZyL1EREibUkqPJA0XjQS4YbGE33kyYPQNyrkVjy1D7zQiBaN+oggJMQTqdAqqmmakGgobVz/k/z3GjfdnZk9yS+zszu7/z2zZ86c9TOZjGeydDotTRHYDGrAGrCIl/vBc3ALPAQDYc9JpVLZ44RBUKHZAS6CgpBhy8g+9j+AI+AmCPVKRYhWoPkE2in6DewHC0EemEymgQWgnmOS4AboBYvDnp8ImVZ543M81QO2ckonsnG+YCuZDzrBCvAWHASXIj2maJMmuguU49v069/HYPISK8F29lvAcZPH4mkjj5Mi6MW3TgbkZ3ASDDNW/vcY3pZpnhbHEN00wbkBLSgvMG7+CTN6u3luN0Q/OorWgRkh1wbBNh53Uyvr8U5Oy0twzVG0FlwF9yLGdHGNF3B5eooBdV7z1kV0A+jgmv1pGLuHbbNoKnoqDIE+B9HV4DGPT1mMH+TaljVfJMJbeKHRwVvJVC+0/jPL+46xrVJMDmL3LW+WzPVK618GY5b3BjNUK8Lr2Rm2uLGQ2Uhf/1ccPs9XtutEeB47Y4YNw2cmy53W2/x+ZxnhUTbOtlTZviq+f4bRvxFMApXa5bngMHht+zzF3Opxp7G1P2B5jidLLFZF8Il6lTZ1+Q7CPqdWbNRSVGwW26cifIedagdhCciZ4AcocVj/QT7vEOEH7JxhFrOxZoqWMrBsrYntXcUbpVyZzTVqMsk8S2OIFrI6eQe+KGarBl5st/D6aAxRsetsG0RTaZu25NFVYE7EzVPB6RiisiOtpbdd2W2Ra7SSATYU8YDRGKLFLP7Eaqjl+TZ1dU5N5mJJLeLrIdpqLG8plIgh5mmFYiB6ghWouaCHoNTOIxLxOK5C+97BS8kNZezvBW3WBT3sN3eiYAl8B4f46yIvNYXkMYkc4Jg+ivbwfJvTnwS+h+xW5fxXkodMl0qRLyEz8YuMcDZaOOYNg7QiKqP5Dj9t+ayxqtmWBAkfPGGx9yhqX9crnL8CDABcFdoDZn2dvQAAAABJRU5ErkJggg=="
+							alt="">闪电发货</li>
+					<li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU2NEU5NUQ2QkE3ODExRTk4ODA5QkJGRDg3QjA4MzhEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU2NEU5NUQ3QkE3ODExRTk4ODA5QkJGRDg3QjA4MzhEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTY0RTk1RDRCQTc4MTFFOTg4MDlCQkZEODdCMDgzOEQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTY0RTk1RDVCQTc4MTFFOTg4MDlCQkZEODdCMDgzOEQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7iYI9gAAADKklEQVR42qyX328MURTHdydLwnqgookf1SiqkXhRiTahhEaR+gM0Gk82USKa1IvwJBFBJH6zvG39eBWhfiRlBZXUrjcrpOlWNkiwJNgHTYzv4XvX7WTuzKzZk3wyd37sfO85e865d6K2bUf8LJlMymEuaAPtYAVo4O23YBjcAY/AO9N7EolEeRzzEbRw6AQXwGzDY0vJdp6Pgd3gFjB6ZXmINuFQADco+hUcACtBLZgG4hxLBPbzmXpwE4yCRab3xwxhlRmf5qXXoAtkDR6UwEeQAUfAcnANLAZvwA5w2dNjih7TRHeCJvw3GeCfDH8nJhNYwt+KXWKkPD0WT/s4boZYNvJ/ZjMvJOmeg0PgE69N9BjeNmqehhHVLcPQi51n3vwTZvYOqvAqUQk9w69bC0iBbQHFX2hhH6RW2eMtrFNJpIum2qPNoGhHBZ7LO1+yOjr/CNOjs3ygS08iF9FIiP+8m+Mzoikez6O3RZZMGIuSGh6dIReNOjBHhNfyxlGvksEs1Utn8pK8YBPDniK/yGc64/T6OMdtMe2/uu8iJjM/yVNnMq0hJiu5XBONw2BDjC1QNXs3M2WvtMRdHOfBN4p90Tx02pgqV0tr/j9cVpMiF4A69mV5fjNvPwEDJMe+XqSg7ROFhpgjMdyWspyjpYbN7nIDKXAcr0LZTAUP2WTcHFEaeREe4sn8KgjXMOGGDGv9Ah6HRfgeTzZWQXgZj/1g3OW+0rgrwmme9LFW/SyvZXvKwW3eyxqaSy/HaQnHe6a57ByauYx5WY7tz7RQpJ39niZlOx2MgA8W+3EPb17XvfbIYgnlZJaZTpydsOTi7VWOe0RTJcAAG8JCtrpCgEViXKsIP9vLxBpRHdKigM0wr6/gZUFtFTjBcbtaD6JB9tUhGshq7rXFuiHa77u9pdCkgJnulsH7NNGDzAv/DT0EJVG+S8ZjvBXHZ14bdE2whdvbeq3srvjuqzX7yX2x7I+fchKn+IWQ1zJ3Cj9nZPHYw42+2o93aHU/cYZe/zHDvA6cA40Bw/yKy+UDZ4T0KolW8NE2C7Qy81u1vjvK3ixCj7l/9v1o+y3AAC75+hhcD1/pAAAAAElFTkSuQmCC"
+							alt="">七天无理由退货</li>
+				</ul>
+			</div>
+			<div class="appraise">
+				<span>商品评价</span>
+				<a class="mui-icon mui-icon-arrowright right1" href="evaluate.html"></a>
+			</div>
+		</div>
+		<div class="ybottom right">
+			<span id="detail" class="ybtn active">商品详情</span>
+			<span class="parameter ybtn">规格参数</span>
+			<div class="detail-list">
+				<img src="https://images.wincheers.net/UpLoad/Web/ProductImg/2019-04-29/NEW_XM/750X300.jpg" alt="">
+			</div>
+			<div class="parameter-list">
+			</div>
+		</div>
+		
+		<div class="shop-type hidden">
+			<div class="shop-type-top">
+				<img src="https://images.wincheers.net/UpLoad/Web/ProductImg/2019-02-18/NEW_XM/G502-01.png">
+				<div class="shop-right">
+					<p class="shop-type-price">￥499</p>
+					已选：<span class="shop-selected">G502主宰者</span>
+				</div>
+				<span class="mui-icon mui-icon-closeempty close-shop"></span>
+			</div>
+			<div class="shop-version">
+				<p>选择型号</p>
+				<p class="lists">
+					<span class="list">G502主宰者</span>
+					<span class="list">G502英雄联盟版</span>
+					<span class="list">G502+G604</span>
+					<span class="list">G502+G910</span>
+					<span class="list">G502+G610+G533</span>
+					<span class="list">G502无线版</span>
+				</p>
+			</div>
+			<div class="model" style="overflow: hidden; padding: 10px;">
+				<p class="model-name">数量
+					<span class="jian">-</span>
+					<span class="model-number">1</span>
+					<span class="add-jia">+</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="x-nav-footer">
+		<div class="x-foot-list x-active">
+			<a href="index.html">
+				<i class="mui-icon iconfont icon-shouye"></i>
+				<p>首页</p>
+			</a>
+		</div>
+		<div class="x-foot-list">
+			<a href="javascript:void(0)">
+				<i class="mui-icon iconfont icon-fenlei"></i>
+				<p>客服</p>
+			</a>
+		</div>
+		<div class="x-foot-list">
+			<a href="shop-car.html">
+				<i class="mui-icon iconfont icon-gouwuche"></i>
+				<p>购物车</p>
+			</a>
+		</div>
+		<div class="x-foot-list add-shop"  >
+			
+		</div>
+	</div>
+	<div class="img" style="width: 0;height: 0;"> </div>
+	<script src="js/footer.js"></script>
+	<script>
+		mui('.mui-bar-nav').on('tap','.mui-icon-left-nav',function() {
+            window.history.go(-1)
+        })
+	 function getWidth() {
+            var html = document.getElementsByTagName("html")[0];
+            html.style.fontSize = (html.clientWidth / 320) * 100 + "px";
+        }
+        getWidth();
+        window.onresize = function () {
+            getWidth();
+        };
+		let page = location.search.split("=")[1]
+		$(".add-shop")[0].innerHTML+=`
+				<a href=shop-car.html?id=${page}>
+					<i ></i>
+					<p class="add_car">加入购物车</p>
+				</a>
+			`
+		
+		$.getJSON("text.php",{id:page} ,function (data) {
+			
+			$(".shop-type-top")[0].innerHTML=`
+				<div class="shop-type-top">
+					<img src="${data[0]["mini_img"]}">
+					<div class="shop-right">
+						<p class="shop-type-price">${data[0].newprice}</p>
+						已选：<span class="shop-selected">G502主宰者</span>
+					</div>
+					<span class="mui-icon mui-icon-closeempty close-shop"></span>
+				</div>
+			`
+			
+	
+				$(".img")[0].innerHTML=`
+					<img src="${data[0].img}" alt="">
+				`
+			$(".detail-list")[0].innerHTML += `
+						<img src="${data[0]['content1']}" alt="">
+					`
+			$(".parameter-list")[0].innerHTML += `
+						${data[0].content2}
+					`
+			$(".new1")[0].innerHTML = `${data[0].newprice}`
+			$(".old1")[0].innerHTML = `${data[0].oldprice}`
+			// 中间 4个小图标
+			for (let i = 0; i < 4; i++) {
+				$(".y-details ul")[0].innerHTML += `
+							<li>
+								<p class="details_img">
+								<img src="${data[0]["icon_list"].split('*')[i]}" alt="">
+								</p>
+								<p class="tit">${data[0]["icon_title"].split('*')[i]}</p>
+								<p class="tit1">${data[0]["icon_txt"].split('*')[i]}</p>
+							</li>
+						`
+			}
+			//详情页标题
+			$(".y-title")[0].innerHTML = `${data[0].title}`
+			console.log($(".img")[0])
+			// 加入购物车
+			mui(".add-shop a").on("tap",".add_car",function(){
+				let shopPrice =$(".shop-type-price")[0].innerText
+				let tit= $(".y-title")[0].innerText
+				let src= $(".img img")[0].getAttribute("src")
+				mui.toast('加入购物车成功');
+				$.getJSON("shop_car.php",{price:shopPrice,id:page,title:tit,img:src},function(data){
+					console.log(data)
+				})
+			})
+		
+			// 轮播
+			let loopCount = data[0]["loop_img"].split("*").length
+
+			for (let i = 0; i < loopCount; i++) {
+				$(".mui-slider-group")[0].innerHTML += `
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:void(0)">
+							<img src="${data[0]["loop_img"].split("*")[i]}" alt="">
+						</a>
+					</div>
+					
+				`
+			}
+			// 轮播上的小点
+			console.log(loopCount)
+			
+			for( let i=0;i<loopCount;i++){
+				$(".mui-slider-indicator")[0].innerHTML+=`
+					<span class="mui-indicator tabs"></span>
+				`
+			}
+			console.log($(".mui-slider-indicator")[0])
+			$(".mui-indicator").eq(0).addClass("mui-active")
+			
+			for(let i =0;i<data[0]["loop-img"].split("*").length;i++){
+				$(".imgs-item")[0].innerHTML+=`
+					<li><img src="${data[0]["loop-img"].split("*")[i]}" alt=""></li>
+			`
+			}
+
+			$(".detail-list").eq(0).children().eq(1).remove()
+
+		})
+		mui.init()
+
+
+		// 选购商品类型
+		mui(".shop-version").on("tap", ".lists .list", function () {
+			$(".shop-selected")[0].innerText = $(this)[0].innerText
+			$(".list").css({ "border": "1px solid #ccc", "color": "#333" })
+			$(this).css({ "border": "1px solid #fd2645", "color": "#fd2645" })
+		})
+		mui(".top").on("tap", "#showUserPicker", function () {
+			$(".shop-type").removeClass("hidden")
+			console.log($(".shop-type").eq(0))
+		})
+		mui(".shop-type").on("tap", ".close-shop", function () {
+			$(".shop-type").addClass("hidden")
+			$(".shop-type").addClass("fadaOut")
+		})
+		mui(".model").on("tap", ".add-jia", function () {
+			$(".model-number")[0].innerText++
+			$(".model-number")[1].innerText++
+		})
+		mui(".model").on("tap", ".jian", function () {
+			if ($(".model-number")[0].innerText > 1) {
+				$(".model-number")[0].innerText--
+				$(".model-number")[1].innerText--
+			}
+
+		})
+
+		mui(".right").on("tap",".ybottom span",function(){
+				$(this).addClass("active").siblings().removeClass("active")
+			})
+			mui(".right").on("tap",".right #detail",foo_1);
+			mui(".right").on("tap",".right .parameter",foo_2);
+			var detailList =document.getElementsByClassName("detail-list")[0]
+			var parameter = document.getElementsByClassName("parameter-list")[0]
+			function foo_1() {
+				parameter.style.display="none"
+				detailList.style.display="block"
+			}
+			function foo_2 (){
+				detailList.style.display="none"
+				parameter.style.display="block"
+			}
+	
+	</script>
+
+</body>
+
+</html>

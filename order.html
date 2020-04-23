@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/mui.picker.css">
+    <link rel="stylesheet" href="css/mui.poppicker.css">
+    
+    <title>订单</title>
+</head>
+<style>
+    body {
+        background: #f4f4f4 !important;
+    }
+</style>
+<body>
+    <div class="y-top">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="order-text">确认订单</h1>
+        </header>
+    </div>
+    <div class="order-box" >
+        <div class="address">
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell mui-media">
+                    <a class="mui-navigate-right">
+                        <div class="mui-media-body new-address">
+                            <p class='mui-ellipsis new-add' >请先建地址</p>
+                            <p class="person-info">
+                                <span class="person-name"></span> <span class="person-number"></span>
+                            </p>
+                            <p class="person-address"></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="y-shoppings">
+        </div>
+        <div class="product-info">
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class=" mui-media post-box">
+                    <img class="mui-media-object mui-pull-left"
+                        src="https://images.wincheers.net/Images/ProductImages/logitech/NEW_XM/2840-0077/2840-0077-001.jpg">
+                    <div class="mui-media-body postage">顺丰包邮卡 </div>
+                    <span class="post-price">￥0</span>
+                    <span class="count-num mui-icon mui-icon-closeempty">1</span>
+                </li>
+            </ul>
+        </div>
+        <div class="ticket">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right ticket-text">
+                        发票信息
+                        <span class="person">个人</span>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right ticket-text">
+                        优惠券
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class="ticket-text">可用50积分抵扣0.5元</span>
+                    <span class="person">
+                        <div class="checkbox ">
+                            <i class="check-input check-select"></i>
+                        </div>
+                    </span>
+                </li>
+                <li class="mui-table-view-cell sell-box">
+                    <span class="sell-text">买家留言</span><input type="text" placeholder="填写备注" class="sell">
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="ticket-text">
+                        商品总金额
+                        <span class="all-person"></span>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="ticket-text">
+                        运费
+                        <span class="freight">+￥0</span>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="ticket-text">
+                        优惠
+                        <span class="discounts">-￥0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="pay-money">
+            应付：<span class="pay-moneies"></span>
+            <span class="go-pay">去付款</span>
+            <div class="pay-type">
+                <div class="pay-type-box">
+                    <span>选择支付方式</span>
+                    <a href="javascript:void(0)" class="mui-icon mui-icon-closeempty pay-close"></a>
+                </div>
+                <div class="pay-content">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell mui-media">
+                            <img class="mui-media-object mui-pull-left" src="./images/weixin.png">
+                            <div class="mui-media-body">
+                                <h3 class="title">微信支付</h3>
+                                <p>推荐安装微信5.0及以上的用户使用</p>
+                                <input type="radio" name="radio1" class="radio">
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell mui-media">
+                            <img class="mui-media-object mui-pull-left" src="./images/pay.png">
+                            <div class="mui-media-body">
+                                <h3 class="title">支付宝支付</h3>
+                                <p>推荐有支付宝账号的用户使用</p>
+                                <input type="radio" name="radio1" class="radio">
+
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell mui-media">
+                            <img class="mui-media-object mui-pull-left" src="./images/bankcard.png">
+                            <div class="mui-media-body">
+                                <h3 class="title">银行转账</h3>
+                                <input type="radio" name="radio1" class="radio " id="radio2">
+                            </div>
+                        </li>
+                        <li class="pay-text">请尽快完成支付，以便商家尽快为您发货</li>
+                        <!-- <li class="pay-text">请尽快完成支付，以便商家尽快为您发货。金额 <span class="all-person1">￥1111</span>元 </li> -->
+                </div><button id='alertBtn' type="button"
+                    class="pay-btn mui-btn mui-btn-blue mui-btn-outlined">确定</button>
+                <div id="info"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="address-box" style="display: none;">
+        <div class="icon-add">
+            <span class="mui-icon mui-icon-location"></span>
+            <p>还没有留过地址哦~</p>
+            <button class="pay-btn">添加地址</button>
+        </div>
+        <div class="edit-address" style="display: none;">
+            <div class="mui-input-row input-text">
+                <label>收件人</label>
+                <input type="text" placeholder="收件人姓名" class="shouname">
+            </div>
+            <div class="mui-input-row input-text">
+                <label>手机号</label>
+            <input type="number" placeholder="收件人手机号" maxlength="11" minlength="6" class="phonenumber">
+            </div>
+            <div class="mui-input-row input-text"  id='showCityPicker3' >
+                <label>收货地址</label>
+                <input type="text" placeholder="选择市省区" id='cityResult3' class="ui-alert">
+            </div>
+            <div class="mui-input-row input-text">
+                <label>详细地址</label>
+                <input type="text" placeholder="详细地址" class="detail-add">
+            </div>
+            <button class="save-address">保存并使用</button>
+        </div>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/yindex.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/mui.picker.js"></script>
+    <script src="js/mui.poppicker.js"></script>
+    <script src="js/city.data.js"></script>
+    <script src="js/city.data-3.js"></script>
+
+    <script>
+        mui('.mui-bar-nav').on('tap','.mui-icon-left-nav',function() {
+            window.history.go(-1)
+        })
+        // 获取后台数据
+        let page = location.search.split("=")[1]
+        $.getJSON("text.php",{id:page},function(data){
+           var numberC=localStorage.getItem('count')
+           var singer = `${data[0].newprice}`
+            var allmon=eval(singer.slice(1) + '*' + numberC)
+            $(".pay-moneies")[0].innerHTML=`${allmon}`
+            $(".all-person")[0].innerHTML=`${allmon}`
+            $(".y-shoppings")[0].innerHTML=`
+                <div class="shop">
+                    <ul class="detail-list1">
+                        <li class=" shoppings-details">
+                            <div>
+                                <span class="img-container">
+                                    <div class="img-box">
+                                        <img class="mui-media-object mui-pull-left"
+                                            src="${data[0].img}">
+                                    </div>
+                                    <div class="mui-media-body img-right">
+                                        <div class="tit">${data[0]['title']}</div>
+                                        <p class='price'>
+                                            <span class="price-number">${data[0]['newprice']}</span>
+                                            <span class="count-num mui-icon mui-icon-closeempty">${numberC}</span>
+                                        </p>
+                                    </div>
+                                </span>
+                                <div class="bot">
+                                    <img src="${data[0].img}"
+                                        alt="">
+                                    <span class="donation">赠品</span> <span>${data[0].title}</span>
+                                    <span class="count1 mui-icon mui-icon-closeempty">${numberC}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            `
+        })
+
+
+
+
+        mui.init()
+        // 选中后加上选中的图标
+        mui('.checkbox').on('tap', '.check-input', addchecked)
+
+        // 加上选中图标函数
+        function addchecked(e) {
+            if ($(this).is(".checked")) {
+                $(this).removeClass("checked")
+            } else {
+                $(this).addClass("checked")
+            }
+        }
+        mui(".pay-money").on("tap", ".pay-close", function () {
+            mui(".pay-type")[0].style.display = "none"
+        })
+        mui(".pay-money").on("tap", ".go-pay", function () {
+            mui(".pay-type")[0].style.display = "block"
+            mui(".pay-type")[0].style.transition="all 10s ease"
+        })
+        document.getElementById("alertBtn").addEventListener('tap', function () {
+            mui.alert('你已成功购买此商品，欢迎下次选购', 'Hello MUI', function () {
+                mui(".pay-type")[0].style.display = "none"
+            });
+        });
+        // 点击新建地址
+        mui(".new-address").on("tap",".new-address .new-add",function(){
+            mui(".order-text")[0].innerText="地址管理"
+            mui(".order-box")[0].style.display="none"
+            mui(".address-box")[0].style.display="block"
+        })
+        // 点击保存并使用
+        var phone =/^(?:(?:\+|00)86)?1[3-9]\d{9}$/
+        var txt =/^(?:[\u3400-\u4DB5\u4E00-\u9FEA\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]|[\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879][\uDC00-\uDFFF]|\uD869[\uDC00-\uDED6\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF34\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0])+$/
+        mui(".edit-address").on("tap",".edit-address .save-address",function(){
+            if(txt.test($('.shouname')[0].value)==false){
+                alert("请输入收件人姓名(限中文)")
+            }else if(phone.test($(".phonenumber")[0].value) ==false){
+                alert("请输入正确手机号")
+            }else if ($(".ui-alert")[0].value==""){
+                alert("请填写收货地址")
+            }else if($(".detail-add")[0].value==""){
+                alert("请输入详细地址")
+            }else {
+                mui(".order-box")[0].style.display="block"
+                mui(".address-box")[0].style.display="none"
+                mui(".new-add")[0].style.display="none"
+                mui(".person-name")[0].innerText=$(".shouname")[0].value
+                mui(".person-number")[0].innerText=$(".phonenumber")[0].value
+                mui(".person-address")[0].innerText=$(".ui-alert")[0].value + $(".detail-add")[0].value
+            }
+        })
+        // 点击添加地址
+        mui(".icon-add").on("tap",".icon-add .pay-btn",function(){
+            mui(".order-text")[0].innerText="编辑收货地址"
+            mui(".icon-add")[0].style.display="none"
+            mui(".edit-address")[0].style.display="block"
+        })
+        // 省市级的三级联动
+        mui.init()
+        mui.ready(function() {
+            var userPicker = new mui.PopPicker();
+            var cityPicker3 = new mui.PopPicker({
+                layer: 3
+            });
+            cityPicker3.setData(cityData3);
+            var showCityPickerButton = document.getElementById('showCityPicker3');
+            var cityResult3 = document.getElementById('cityResult3');
+            showCityPickerButton.addEventListener('tap', function(event) {
+                cityPicker3.show(function(items) {
+                    cityResult3.value =  (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+                    
+                });
+            }, false);
+        });
+    </script>
+</body>
+
+</html>
